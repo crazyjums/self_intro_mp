@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/about/about",
+    "pages/experience/experience"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F7F8FA",
+    "navigationBarTitleText": "个人简历",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F8FA",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#A0AEC0",
+    "selectedColor": "#2B6CB0",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于我",
+        "iconPath": "images/tab-user.png",
+        "selectedIconPath": "images/tab-user-active.png"
+      },
+      {
+        "pagePath": "pages/experience/experience",
+        "text": "经历",
+        "iconPath": "images/tab-list.png",
+        "selectedIconPath": "images/tab-list-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

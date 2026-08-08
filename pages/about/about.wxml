@@ -1,0 +1,25 @@
+<view class="page">
+  <view class="card">
+    <view class="card-title">基本信息</view>
+    <view class="info-row" wx:for="{{profile.basicInfo}}" wx:key="label">
+      <view class="info-label label">{{item.label}}</view>
+      <view class="info-value">{{item.value}}</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">技能特长</view>
+    <view class="skill-group" wx:for="{{profile.skills}}" wx:key="group" wx:for-item="group">
+      <view class="skill-group-title">{{group.group}}</view>
+      <view class="skill-item" wx:for="{{group.items}}" wx:key="name" wx:for-item="skill">
+        <view class="skill-top">
+          <text class="skill-name">{{skill.name}}</text>
+          <text class="skill-level label">{{skill.level}}%</text>
+        </view>
+        <view class="skill-bar">
+          <view class="skill-bar-inner" style="width: {{skill.level}}%;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
