@@ -26,6 +26,10 @@ page {
   padding: 20rpx 24rpx 48rpx;
 }
 
+.tabbar-page {
+  padding-bottom: 150rpx;
+}
+
 .card {
   background: var(--surface);
   border-radius: var(--radius);

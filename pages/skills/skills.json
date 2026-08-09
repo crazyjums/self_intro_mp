@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "技能"
+  "navigationBarTitleText": "技能",
+  "usingComponents": { "tabbar": "/components/tabbar/tabbar" }
 }

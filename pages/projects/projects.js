@@ -1,4 +1,5 @@
 const app = getApp()
+const hideNativeTabbar = require('../../utils/hide-native-tabbar.js')
 
 Page({
   data: {
@@ -11,6 +12,10 @@ Page({
   onLoad() {
     const projects = app.globalData.profile.projects
     this.setData({ projects, visibleProjects: projects })
+  },
+
+  onShow() {
+    hideNativeTabbar()
   },
 
   selectFilter(e) {

@@ -1,4 +1,5 @@
 const app = getApp()
+const hideNativeTabbar = require('../../utils/hide-native-tabbar.js')
 
 Page({
   data: {
@@ -14,6 +15,10 @@ Page({
 
   onLoad() {
     this.setData({ profile: app.globalData.profile })
+  },
+
+  onShow() {
+    hideNativeTabbar()
   },
 
   openMenu(e) {

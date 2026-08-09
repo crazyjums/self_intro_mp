@@ -1,9 +1,9 @@
-.ai-page { min-height: 100vh; background: #F7F8FA; }
+.ai-page { min-height: 100vh; padding-bottom: 120rpx; box-sizing: border-box; background: #F7F8FA; }
 .ai-header { display: flex; align-items: center; justify-content: space-between; height: 86rpx; padding: 0 24rpx; background: #FFFFFF; border-bottom: 1rpx solid #F0F1F2; }
 .ai-back, .ai-more { width: 52rpx; color: var(--ink); font-size: 42rpx; line-height: 1; }
 .ai-more { color: var(--ink-2); font-size: 30rpx; letter-spacing: 4rpx; text-align: right; }
 .ai-title { font-size: 34rpx; font-weight: 700; }
-.chat-scroll { height: calc(100vh - 230rpx); }
+.chat-scroll { height: calc(100vh - 350rpx); }
 .chat-list { padding: 24rpx; }
 .welcome-card { display: flex; align-items: center; padding: 20rpx; border-radius: 18rpx; background: #ECF1F3; }
 .welcome-card image { width: 124rpx; height: 124rpx; flex-shrink: 0; }

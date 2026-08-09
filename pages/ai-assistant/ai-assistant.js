@@ -1,4 +1,5 @@
 const assets = require('../../data/assets.js')
+const hideNativeTabbar = require('../../utils/hide-native-tabbar.js')
 
 Page({
   data: {
@@ -18,6 +19,10 @@ Page({
         text: '这套平台目前已经服务公司 30+ 业务线，日均发布千次级别，发布成功率 100%。'
       }
     ]
+  },
+
+  onShow() {
+    hideNativeTabbar()
   },
 
   onInput(e) {

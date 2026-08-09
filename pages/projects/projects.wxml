@@ -1,4 +1,4 @@
-<view class="page projects-page">
+<view class="page projects-page tabbar-page">
   <view class="page-header">
     <text class="header-action placeholder">‹</text>
     <text class="page-header-title">项目经验</text>
@@ -31,4 +31,5 @@
       </view>
     </view>
   </view>
+  <tabbar active="projects" />
 </view>

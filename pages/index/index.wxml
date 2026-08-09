@@ -1,4 +1,4 @@
-<view class="home-page">
+<view class="home-page tabbar-page">
   <view class="hero-card anim {{shown ? 'show' : ''}}">
     <image class="hero-bg" src="{{assets.techBg}}" mode="aspectFill" />
     <view class="hero-shade"></view>
@@ -62,4 +62,5 @@
       <text class="quick-arrow">›</text>
     </view>
   </view>
+  <tabbar active="home" />
 </view>

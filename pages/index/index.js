@@ -1,5 +1,6 @@
 const app = getApp()
 const assets = require('../../data/assets.js')
+const hideNativeTabbar = require('../../utils/hide-native-tabbar.js')
 
 Page({
   data: {
@@ -16,6 +17,10 @@ Page({
 
   onReady() {
     setTimeout(() => this.setData({ shown: true }), 50)
+  },
+
+  onShow() {
+    hideNativeTabbar()
   },
 
   onTapTag() {

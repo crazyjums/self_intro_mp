@@ -30,4 +30,5 @@
     <input class="composer" value="{{draft}}" placeholder="你可以问我任何问题..." confirm-type="send" bindinput="onInput" bindconfirm="sendMessage" />
     <view class="send-btn {{draft ? 'ready' : ''}}" bindtap="sendMessage">↗</view>
   </view>
+  <tabbar active="ai" />
 </view>

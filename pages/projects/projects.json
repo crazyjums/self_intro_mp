@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "项目"
+  "navigationBarTitleText": "项目",
+  "usingComponents": { "tabbar": "/components/tabbar/tabbar" }
 }
