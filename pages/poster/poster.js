@@ -1,5 +1,15 @@
 const app = getApp()
 
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath()
+  ctx.moveTo(x + r, y)
+  ctx.arcTo(x + w, y, x + w, y + h, r)
+  ctx.arcTo(x + w, y + h, x, y + h, r)
+  ctx.arcTo(x, y + h, x, y, r)
+  ctx.arcTo(x, y, x + w, y, r)
+  ctx.closePath()
+}
+
 Page({
   data: {
     saved: false
@@ -11,6 +21,19 @@ Page({
 
   draw() {
     const profile = app.globalData.profile
+    const that = this
+    wx.getImageInfo({
+      src: '/images/wechat.jpg',
+      success: () => {
+        that.paint(profile)
+      },
+      fail: () => {
+        that.paint(profile)
+      }
+    })
+  },
+
+  paint(profile) {
     const ctx = wx.createCanvasContext('poster', this)
     const W = 375
     const H = 600
@@ -28,7 +51,14 @@ Page({
     ctx.beginPath()
     ctx.arc(W, 0, 120, 0, Math.PI * 2)
     ctx.fill()
-    ctx.drawImage('/images/avatar.png', W / 2 - 36, 28, 72, 72)
+
+    const avatarPath = '/images/avatar.png'
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(W / 2, 64, 36, 0, Math.PI * 2)
+    ctx.clip()
+    ctx.drawImage(avatarPath, W / 2 - 36, 28, 72, 72)
+    ctx.restore()
 
     ctx.setTextAlign('center')
     ctx.setFillStyle('#FFFFFF')
@@ -51,8 +81,7 @@ Page({
     chips.forEach((c, i) => {
       const x = startX + i * (chipW + 12)
       ctx.setFillStyle('#15211C')
-      ctx.beginPath()
-      ctx.roundRect(x, 236, chipW, chipH, 15)
+      roundRect(ctx, x, 236, chipW, chipH, 15)
       ctx.fill()
       ctx.setFillStyle('#34D399')
       ctx.setFontSize(12)
@@ -61,8 +90,7 @@ Page({
 
     // bottom bar
     ctx.setFillStyle('rgba(255,255,255,0.08)')
-    ctx.beginPath()
-    ctx.roundRect(28, 440, W - 56, 120, 20)
+    roundRect(ctx, 28, 440, W - 56, 120, 20)
     ctx.fill()
 
     ctx.setTextAlign('left')
@@ -73,15 +101,20 @@ Page({
     ctx.setFontSize(12)
     ctx.fillText('扫码查看完整简历', 52, 520)
 
-    // QR placeholder
+    // WeChat QR code
     ctx.setFillStyle('#FFFFFF')
     ctx.fillRect(W - 150, 452, 96, 96)
-    ctx.setFillStyle('#0B0F0E')
-    ctx.setFontSize(13)
-    ctx.fillText('QR', W - 102, 500)
-    ctx.strokeStyle = '#0B0F0E'
-    ctx.lineWidth = 3
-    ctx.strokeRect(W - 150, 452, 96, 96)
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(W - 102, 500, 46, 0, Math.PI * 2)
+    ctx.clip()
+    ctx.drawImage('/images/wechat.jpg', W - 148, 454, 92, 92)
+    ctx.restore()
+    ctx.strokeStyle = '#10B981'
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.arc(W - 102, 500, 47, 0, Math.PI * 2)
+    ctx.stroke()
 
     ctx.setFillStyle('#6B7280')
     ctx.setFontSize(11)
