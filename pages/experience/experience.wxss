@@ -1,235 +1,93 @@
-.pdf-btn-wrap {
-  padding: 24rpx 24rpx 0;
-}
-
-.pdf-btn {
+.tl {
   display: flex;
+  padding: 12rpx 0;
+}
+
+.tl-node {
+  width: 36rpx;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 28rpx 32rpx;
-  background: linear-gradient(90deg, #2B6CB0, #4299E1);
-  border-radius: 16rpx;
-  color: #FFFFFF;
-  box-shadow: 0 6rpx 20rpx rgba(43, 108, 176, 0.3);
+  margin-right: 28rpx;
 }
 
-.pdf-btn-icon {
-  font-size: 48rpx;
-  margin-right: 20rpx;
-}
-
-.pdf-btn-text {
-  flex: 1;
-}
-
-.pdf-btn-title {
-  font-size: 32rpx;
-  font-weight: 600;
-}
-
-.pdf-btn-sub {
-  font-size: 24rpx;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 4rpx;
-}
-
-.pdf-btn-arrow {
-  font-size: 48rpx;
-  font-weight: 300;
-}
-
-.timeline {
-  position: relative;
-  padding-left: 30rpx;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 8rpx;
-  top: 12rpx;
-  bottom: 12rpx;
-  width: 2rpx;
-  background: #E2E8F0;
-}
-
-.timeline-item {
-  position: relative;
-  padding-bottom: 36rpx;
-}
-
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -30rpx;
-  top: 12rpx;
-  width: 18rpx;
-  height: 18rpx;
+.tl-dot {
+  width: 22rpx;
+  height: 22rpx;
   border-radius: 50%;
-  background: #2B6CB0;
-  border: 4rpx solid #BEE3F8;
+  margin-top: 10rpx;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 8rpx var(--soft-ring, rgba(16, 185, 129, 0.15));
 }
 
-.timeline-dot.work {
-  background: #DD6B20;
-  border-color: #FED7AA;
+.tl-dot.work {
+  background: var(--accent);
+  --soft-ring: rgba(16, 185, 129, 0.15);
 }
 
-.timeline-dot.education {
-  background: #38A169;
-  border-color: #C6F6D5;
+.tl-dot.edu {
+  background: #1D1D1F;
+  --soft-ring: rgba(29, 29, 31, 0.1);
 }
 
-.timeline-period {
-  font-size: 24rpx;
-  color: #2B6CB0;
-  font-weight: 600;
-}
-
-.timeline-title {
-  margin-top: 8rpx;
-  font-size: 32rpx;
-  font-weight: 600;
-}
-
-.timeline-org {
-  margin-top: 4rpx;
-  font-size: 26rpx;
-  color: #718096;
-}
-
-.timeline-points {
+.tl-line {
+  flex: 1;
+  width: 2rpx;
+  background: var(--line);
   margin-top: 12rpx;
 }
 
-.timeline-point {
-  position: relative;
-  padding: 6rpx 0 6rpx 24rpx;
-  font-size: 26rpx;
-  color: #4A5568;
-}
-
-.timeline-point::before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  top: 4rpx;
-  color: #A0AEC0;
-}
-
-.project {
-  margin-bottom: 32rpx;
-}
-
-.project:last-child {
-  margin-bottom: 0;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.project-name {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #2D3748;
-}
-
-.project-period {
-  font-size: 22rpx;
-  flex-shrink: 0;
-  margin-left: 16rpx;
-}
-
-.project-meta {
-  margin-top: 8rpx;
-}
-
-.project-meta-item {
-  font-size: 24rpx;
-  color: #4A5568;
-}
-
-.project-points {
-  margin-top: 10rpx;
-}
-
-.project-point {
-  position: relative;
-  padding: 6rpx 0 6rpx 24rpx;
-  font-size: 26rpx;
-  color: #4A5568;
-}
-
-.project-point::before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  top: 4rpx;
-  color: #A0AEC0;
-}
-
-.hobby-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.hobby-item {
-  display: flex;
-  align-items: center;
-  margin: 0 16rpx 16rpx 0;
-  padding: 12rpx 24rpx;
-  background: #EBF4FF;
-  border-radius: 999rpx;
-}
-
-.hobby-icon {
-  font-size: 28rpx;
-  margin-right: 8rpx;
-}
-
-.hobby-name {
-  font-size: 26rpx;
-  color: #2B6CB0;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  padding: 20rpx 0;
-  border-bottom: 1rpx solid #EDF2F7;
-}
-
-.contact-item:last-child {
-  border-bottom: none;
-}
-
-.contact-icon {
-  font-size: 36rpx;
-  margin-right: 20rpx;
-}
-
-.contact-info {
+.tl-body {
   flex: 1;
+  padding-bottom: 40rpx;
 }
 
-.contact-label {
-  font-size: 22rpx;
+.tl:last-child .tl-body {
+  padding-bottom: 8rpx;
 }
 
-.contact-value {
-  font-size: 28rpx;
-  color: #2D3748;
-}
-
-.contact-copy {
-  padding: 8rpx 24rpx;
+.tl-period {
   font-size: 24rpx;
-  color: #2B6CB0;
-  border: 2rpx solid #2B6CB0;
-  border-radius: 999rpx;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1rpx;
+}
+
+.tl:last-child .tl-dot.edu .tl-line,
+.tl:last-child .tl-line {
+  display: none;
+}
+
+.tl-title {
+  margin-top: 8rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.tl-org {
+  margin-top: 4rpx;
+  font-size: 26rpx;
+}
+
+.tl-points {
+  margin-top: 14rpx;
+}
+
+.tl-point {
+  position: relative;
+  padding: 6rpx 0 6rpx 26rpx;
+  font-size: 26rpx;
+  color: var(--ink-2);
+}
+
+.tl-point::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.35;
 }

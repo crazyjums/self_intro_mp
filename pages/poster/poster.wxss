@@ -1,0 +1,25 @@
+.poster-wrap {
+  padding: 32rpx 48rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  width: 375px;
+  height: 600px;
+  border-radius: 24px;
+  box-shadow: 0 24rpx 80rpx rgba(0, 0, 0, 0.25);
+}
+
+.poster-tip {
+  margin-top: 24rpx;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 24rpx;
+}
+
+.poster-btn {
+  margin-top: 32rpx;
+  width: 100%;
+}

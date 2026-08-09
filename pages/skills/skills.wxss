@@ -1,0 +1,87 @@
+.skill-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #FFFFFF, #F0FDF8);
+}
+
+.skill-count {
+  font-size: 72rpx;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.skill-count-label {
+  margin-top: 4rpx;
+  font-size: 24rpx;
+}
+
+.skill-intro {
+  flex: 1;
+  margin-left: 40rpx;
+  font-size: 26rpx;
+  color: var(--ink-2);
+}
+
+.skill-group {
+  margin-top: 8rpx;
+}
+
+.skill-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 24rpx 8rpx 16rpx;
+}
+
+.skill-group-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.skill-group-count {
+  font-size: 22rpx;
+}
+
+.bar-item {
+  padding: 18rpx 0;
+}
+
+.bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12rpx;
+}
+
+.bar-name {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.bar-level {
+  font-size: 24rpx;
+  font-variant-numeric: tabular-nums;
+}
+
+.bar-track {
+  height: 14rpx;
+  border-radius: 999rpx;
+  background: #F2F2F4;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, var(--accent), #34D399);
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.anim {
+  opacity: 0;
+}
+
+.anim.show {
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

@@ -1,0 +1,63 @@
+<view class="page" wx:if="{{project}}">
+  <!-- README header -->
+  <view class="readme-head anim {{shown ? 'show' : ''}}">
+    <view class="readme-title">{{project.name}}</view>
+    <view class="readme-tech">
+      <view class="tag" wx:for="{{project.tech}}" wx:key="*this">{{item}}</view>
+    </view>
+    <view class="readme-desc">{{project.intro}}</view>
+  </view>
+
+  <!-- 项目背景 -->
+  <view class="doc anim {{shown ? 'show' : ''}}" style="animation-delay:.08s;">
+    <view class="doc-title">项目背景</view>
+    <view class="doc-body">{{project.background}}</view>
+  </view>
+
+  <!-- 技术架构 -->
+  <view class="doc anim {{shown ? 'show' : ''}}" style="animation-delay:.14s;">
+    <view class="doc-title">技术架构</view>
+    <view class="doc-body">{{project.architecture}}</view>
+    <view class="arch">
+      <view class="arch-row">
+        <view class="arch-node gw">Go</view>
+        <view class="arch-node py">Python</view>
+        <view class="arch-node jk">Jenkins</view>
+      </view>
+      <view class="arch-flow">▼ 调度核心</view>
+      <view class="arch-row">
+        <view class="arch-node k8s">Kubernetes</view>
+      </view>
+      <view class="arch-flow">▼ 发布环境</view>
+      <view class="arch-row">
+        <view class="arch-node rd">Redis</view>
+        <view class="arch-node my">MySQL</view>
+        <view class="arch-node kf">Kafka</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 我的职责 -->
+  <view class="doc anim {{shown ? 'show' : ''}}" style="animation-delay:.2s;">
+    <view class="doc-title">我的职责</view>
+    <view class="doc-list">
+      <view class="doc-item" wx:for="{{project.responsibilities}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 解决问题 -->
+  <view class="doc anim {{shown ? 'show' : ''}}" style="animation-delay:.26s;">
+    <view class="doc-title">解决问题</view>
+    <view class="doc-list">
+      <view class="doc-item" wx:for="{{project.problems}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 项目成果 -->
+  <view class="doc anim {{shown ? 'show' : ''}}" style="animation-delay:.32s;">
+    <view class="doc-title">项目成果</view>
+    <view class="result-grid">
+      <view class="result-chip" wx:for="{{project.results}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+</view>

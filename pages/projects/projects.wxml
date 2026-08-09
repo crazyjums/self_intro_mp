@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="project-card anim" wx:for="{{projects}}" wx:key="id"
+    data-id="{{item.id}}" bindtap="openDetail" hover-class="press">
+    <view class="project-top">
+      <view class="project-index">0{{item.id}}</view>
+      <view class="project-arrow">→</view>
+    </view>
+    <view class="project-name">{{item.name}}</view>
+    <view class="project-intro muted">{{item.intro}}</view>
+    <view class="project-tech">
+      <view class="tag" wx:for="{{item.tech}}" wx:for-item="t" wx:key="*this">{{t}}</view>
+    </view>
+  </view>
+
+  <view class="tip caption">点击卡片查看项目详情</view>
+</view>

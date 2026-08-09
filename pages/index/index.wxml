@@ -1,51 +1,64 @@
 <view class="page">
-  <view class="hero">
-    <image class="avatar" src="{{profile.avatar}}" mode="aspectFill" />
-    <view class="hero-name">{{profile.name}}</view>
-    <view class="hero-en">{{profile.enName}}</view>
-    <view class="hero-title">{{profile.title}}</view>
-    <view class="hero-slogan">{{profile.slogan}}</view>
+  <!-- Hero -->
+  <view class="hero anim {{shown ? 'show' : ''}}">
+    <view class="hero-inner">
+      <image class="avatar" src="{{profile.avatar}}" mode="aspectFill" />
+      <view class="hero-name">{{profile.name}}</view>
+      <view class="hero-en">{{profile.enName}}</view>
+      <view class="hero-role">{{profile.title}}</view>
+      <view class="hero-line">{{profile.oneLiner}}</view>
+    </view>
   </view>
 
-  <view class="card">
-    <view class="card-title">求职意向</view>
-    <view class="intention-grid">
-      <view class="intention-item">
-        <view class="intention-label label">岗位</view>
-        <view class="intention-value">{{profile.jobIntention.position}}</view>
-      </view>
-      <view class="intention-item">
-        <view class="intention-label label">城市</view>
-        <view class="intention-value">{{profile.jobIntention.city}}</view>
-      </view>
-      <view class="intention-item">
-        <view class="intention-label label">经验</view>
-        <view class="intention-value">{{profile.jobIntention.experience}}</view>
-      </view>
-      <view class="intention-item">
-        <view class="intention-label label">学历</view>
-        <view class="intention-value">{{profile.jobIntention.education}}</view>
+  <!-- Tech tags -->
+  <view class="card anim" style="animation-delay: .08s;">
+    <view class="section-title-sm">技术栈</view>
+    <view class="tag-cloud">
+      <view class="tag" wx:for="{{profile.tags}}" wx:key="*this" bindtap="onTapTag">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 我的经历 -->
+  <view class="section-head anim" style="animation-delay: .14s;">
+    <text class="section-title">我的经历</text>
+    <text class="section-link" bindtap="goExperience">查看全部</text>
+  </view>
+  <view class="card career anim" style="animation-delay: .2s;">
+    <view class="career-period">{{profile.career.period}}</view>
+    <view class="career-role">{{profile.career.role}}</view>
+    <view class="career-org muted">{{profile.career.company}}</view>
+    <view class="career-list">
+      <view class="career-item" wx:for="{{profile.career.highlights}}" wx:key="*this">
+        <view class="dot"></view>{{item}}
       </view>
     </view>
   </view>
 
-  <view class="card">
-    <view class="card-title">个人简介</view>
-    <view class="summary">{{profile.summary}}</view>
+  <!-- 开源主页 -->
+  <view class="section-head anim" style="animation-delay: .26s;">
+    <text class="section-title">开源主页</text>
   </view>
-
-  <view class="card">
-    <view class="card-title">个性签名</view>
-    <view class="quotes">
-      <view class="quote-item" wx:for="{{profile.quotes}}" wx:key="*this">
-        <view class="quote-mark">“</view>
-        <view class="quote-text">{{item}}</view>
-      </view>
+  <view class="social-grid anim" style="animation-delay: .3s;">
+    <view class="social-card" wx:for="{{profile.socials}}" wx:key="name"
+      data-url="{{item.url}}" bindtap="openSocial" hover-class="press">
+      <view class="social-icon">{{item.icon}}</view>
+      <view class="social-name">{{item.name}}</view>
+      <view class="social-value caption">{{item.value}}</view>
     </view>
   </view>
 
-  <view class="footer-nav">
-    <view class="footer-btn" bindtap="goAbout">查看关于我</view>
-    <view class="footer-btn" bindtap="goExperience">查看经历项目</view>
+  <!-- 技术文章 -->
+  <view class="section-head anim" style="animation-delay: .36s;">
+    <text class="section-title">技术文章</text>
+    <text class="section-link" bindtap="copyBlog">博客地址</text>
+  </view>
+  <view class="card list-card anim" style="animation-delay: .4s;">
+    <view class="article-item" wx:for="{{profile.articles}}" wx:key="title">
+      <view class="article-info">
+        <view class="article-title">{{item.title}}</view>
+        <view class="article-date caption">{{item.date}}</view>
+      </view>
+      <view class="article-cat">{{item.category}}</view>
+    </view>
   </view>
 </view>

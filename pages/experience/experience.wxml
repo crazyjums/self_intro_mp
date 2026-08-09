@@ -1,92 +1,41 @@
 <view class="page">
-  <view class="pdf-btn-wrap">
-    <view class="pdf-btn" bindtap="openPdf">
-      <text class="pdf-btn-icon">📄</text>
-      <view class="pdf-btn-text">
-        <view class="pdf-btn-title">查看 PDF 简历</view>
-        <view class="pdf-btn-sub label">点击查看完整版简历</view>
-      </view>
-      <text class="pdf-btn-arrow">›</text>
-    </view>
+  <view class="section-head">
+    <text class="section-title">工作经历</text>
   </view>
-
   <view class="card">
-    <view class="card-title">工作经历</view>
-    <view class="timeline">
-      <view class="timeline-item" wx:for="{{profile.workExperience}}" wx:key="period">
-        <view class="timeline-dot work"></view>
-        <view class="timeline-body">
-          <view class="timeline-period">{{item.period}}</view>
-          <view class="timeline-title">{{item.title}}</view>
-          <view class="timeline-org">{{item.org}}</view>
-          <view class="timeline-points">
-            <view class="timeline-point" wx:for="{{item.points}}" wx:for-item="point" wx:key="*this">
-              {{point}}
-            </view>
-          </view>
+    <view class="tl" wx:for="{{profile.workExperience}}" wx:key="period">
+      <view class="tl-node">
+        <view class="tl-dot work"></view>
+        <view class="tl-line"></view>
+      </view>
+      <view class="tl-body">
+        <view class="tl-period">{{item.period}}</view>
+        <view class="tl-title">{{item.title}}</view>
+        <view class="tl-org muted">{{item.org}}</view>
+        <view class="tl-points">
+          <view class="tl-point" wx:for="{{item.points}}" wx:for-item="p" wx:key="*this">{{p}}</view>
         </view>
       </view>
     </view>
   </view>
 
+  <view class="section-head">
+    <text class="section-title">教育经历</text>
+  </view>
   <view class="card">
-    <view class="card-title">教育经历</view>
-    <view class="timeline">
-      <view class="timeline-item" wx:for="{{profile.educationExperience}}" wx:key="period">
-        <view class="timeline-dot education"></view>
-        <view class="timeline-body">
-          <view class="timeline-period">{{item.period}}</view>
-          <view class="timeline-title">{{item.title}}</view>
-          <view class="timeline-org">{{item.org}}</view>
-          <view class="timeline-points">
-            <view class="timeline-point" wx:for="{{item.points}}" wx:for-item="point" wx:key="*this">
-              {{point}}
-            </view>
-          </view>
+    <view class="tl" wx:for="{{profile.educationExperience}}" wx:key="period">
+      <view class="tl-node">
+        <view class="tl-dot edu"></view>
+        <view class="tl-line"></view>
+      </view>
+      <view class="tl-body">
+        <view class="tl-period">{{item.period}}</view>
+        <view class="tl-title">{{item.title}}</view>
+        <view class="tl-org muted">{{item.org}}</view>
+        <view class="tl-points">
+          <view class="tl-point" wx:for="{{item.points}}" wx:for-item="p" wx:key="*this">{{p}}</view>
         </view>
       </view>
-    </view>
-  </view>
-
-  <view class="card">
-    <view class="card-title">项目经验</view>
-    <view class="project" wx:for="{{profile.projects}}" wx:key="name">
-      <view class="project-header">
-        <view class="project-name">{{item.name}}</view>
-        <view class="project-period label">{{item.period}}</view>
-      </view>
-      <view class="project-meta">
-        <view class="project-meta-item"><text class="label">角色：</text>{{item.role}}</view>
-        <view class="project-meta-item"><text class="label">技术栈：</text>{{item.stack}}</view>
-      </view>
-      <view class="project-points">
-        <view class="project-point" wx:for="{{item.points}}" wx:for-item="point" wx:key="*this">
-          {{point}}
-        </view>
-      </view>
-    </view>
-  </view>
-
-  <view class="card">
-    <view class="card-title">兴趣爱好</view>
-    <view class="hobby-list">
-      <view class="hobby-item" wx:for="{{profile.hobbies}}" wx:key="name">
-        <text class="hobby-icon">{{item.icon}}</text>
-        <text class="hobby-name">{{item.name}}</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="card">
-    <view class="card-title">联系方式</view>
-    <view class="contact-item" wx:for="{{profile.contacts}}" wx:key="type"
-      data-value="{{item.value}}" bindtap="copyContact">
-      <text class="contact-icon">{{item.icon}}</text>
-      <view class="contact-info">
-        <view class="contact-label label">{{item.label}}</view>
-        <view class="contact-value">{{item.value}}</view>
-      </view>
-      <text class="contact-copy">复制</text>
     </view>
   </view>
 </view>

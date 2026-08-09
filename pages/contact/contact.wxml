@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="contact-hero card">
+    <view class="contact-hero-name">保持联系</view>
+    <view class="contact-hero-sub muted">技术交流、合作机会，欢迎随时找我</view>
+  </view>
+
+  <view class="card contact-list">
+    <view class="contact-row" wx:for="{{contacts}}" wx:key="type"
+      data-value="{{item.value}}" bindtap="copy" hover-class="press">
+      <view class="contact-icon">{{item.icon}}</view>
+      <view class="contact-info">
+        <view class="contact-label muted">{{item.label}}</view>
+        <view class="contact-value">{{item.value}}</view>
+      </view>
+      <view class="contact-copy">复制</view>
+    </view>
+  </view>
+
+  <view class="btn btn-primary action" bindtap="saveContact">保存联系方式</view>
+  <view class="btn btn-ghost action" bindtap="goPoster">生成我的简历海报</view>
+</view>

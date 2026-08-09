@@ -1,0 +1,72 @@
+.project-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 44rpx;
+  margin-bottom: 24rpx;
+  border: 1rpx solid var(--line);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.press {
+  transform: scale(0.98);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-index {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2rpx;
+}
+
+.project-arrow {
+  font-size: 40rpx;
+  color: var(--ink-4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.press .project-arrow {
+  transform: translateX(6rpx);
+  color: var(--accent);
+}
+
+.project-name {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  font-weight: 800;
+  letter-spacing: -0.5rpx;
+}
+
+.project-intro {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  line-height: 1.7;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24rpx;
+}
+
+.project-tech .tag {
+  margin: 0 12rpx 12rpx 0;
+  font-size: 22rpx;
+  padding: 8rpx 20rpx;
+}
+
+.tip {
+  text-align: center;
+  padding: 20rpx 0;
+}
+
+.anim {
+  opacity: 0;
+  animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

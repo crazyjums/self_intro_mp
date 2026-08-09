@@ -1,19 +1,23 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/about/about",
-    "pages/experience/experience"
+    "pages/experience/experience",
+    "pages/projects/projects",
+    "pages/skills/skills",
+    "pages/contact/contact",
+    "pages/project-detail/project-detail",
+    "pages/poster/poster"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#F7F8FA",
-    "navigationBarTitleText": "个人简历",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "朱洪根",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#F7F8FA",
+    "backgroundColor": "#F5F5F7",
     "backgroundTextStyle": "light"
   },
   "tabBar": {
-    "color": "#A0AEC0",
-    "selectedColor": "#2B6CB0",
+    "color": "#8E8E93",
+    "selectedColor": "#10B981",
     "backgroundColor": "#FFFFFF",
     "borderStyle": "white",
     "list": [
@@ -24,16 +28,28 @@
         "selectedIconPath": "images/tab-home-active.png"
       },
       {
-        "pagePath": "pages/about/about",
-        "text": "关于我",
-        "iconPath": "images/tab-user.png",
-        "selectedIconPath": "images/tab-user-active.png"
-      },
-      {
         "pagePath": "pages/experience/experience",
         "text": "经历",
-        "iconPath": "images/tab-list.png",
-        "selectedIconPath": "images/tab-list-active.png"
+        "iconPath": "images/tab-briefcase.png",
+        "selectedIconPath": "images/tab-briefcase-active.png"
+      },
+      {
+        "pagePath": "pages/projects/projects",
+        "text": "项目",
+        "iconPath": "images/tab-folder.png",
+        "selectedIconPath": "images/tab-folder-active.png"
+      },
+      {
+        "pagePath": "pages/skills/skills",
+        "text": "技能",
+        "iconPath": "images/tab-pulse.png",
+        "selectedIconPath": "images/tab-pulse-active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系",
+        "iconPath": "images/tab-mail.png",
+        "selectedIconPath": "images/tab-mail-active.png"
       }
     ]
   },

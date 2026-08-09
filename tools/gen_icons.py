@@ -2,6 +2,8 @@ import struct
 import zlib
 
 SIZE = 81
+ACTIVE = (16, 185, 129, 255)
+INACTIVE = (142, 142, 147, 255)
 
 def make_png(path, pixels):
     def chunk(tag, data):
@@ -57,27 +59,36 @@ def fill_triangle(pixels, p1, p2, p3, color):
 
 def draw_home(color):
     p = blank()
-    fill_triangle(p, (40, 8), (75, 38), (5, 38), color)
-    fill_rect(p, 12, 36, 68, 73, color)
-    fill_rect(p, 34, 56, 46, 73, color, ) if False else None
+    fill_triangle(p, (40, 10), (74, 40), (6, 40), color)
+    fill_rect(p, 14, 36, 66, 72, color)
     return p
 
-def draw_user(color):
+def draw_briefcase(color):
     p = blank()
-    fill_circle(p, 40, 26, 14, color)
-    fill_circle(p, 40, 74, 30, color)
+    fill_rect(p, 12, 30, 68, 72, color)
+    fill_rect(p, 30, 18, 50, 32, color)
     return p
 
-def draw_list(color):
+def draw_folder(color):
     p = blank()
-    fill_rect(p, 10, 20, 70, 28, color)
-    fill_rect(p, 10, 37, 70, 45, color)
-    fill_rect(p, 10, 54, 70, 62, color)
+    fill_rect(p, 10, 20, 70, 64, color)
+    fill_triangle(p, (10, 20), (38, 20), (42, 32), color)
     return p
 
-for name, fn in [('home', draw_home), ('user', draw_user), ('list', draw_list)]:
-    gray = (160, 174, 192, 255)
-    blue = (43, 108, 176, 255)
-    make_png('images/tab-%s.png' % name, fn(gray))
-    make_png('images/tab-%s-active.png' % name, fn(blue))
+def draw_pulse(color):
+    p = blank()
+    fill_rect(p, 16, 18, 28, 62, color)
+    fill_rect(p, 36, 32, 48, 62, color)
+    fill_rect(p, 56, 10, 68, 62, color)
+    return p
+
+def draw_mail(color):
+    p = blank()
+    fill_rect(p, 10, 24, 70, 58, color)
+    fill_triangle(p, (10, 24), (40, 44), (70, 24), color)
+    return p
+
+for name, fn in [('home', draw_home), ('briefcase', draw_briefcase), ('folder', draw_folder), ('pulse', draw_pulse), ('mail', draw_mail)]:
+    make_png('images/tab-%s.png' % name, fn(INACTIVE))
+    make_png('images/tab-%s-active.png' % name, fn(ACTIVE))
     print('generated tab-%s' % name)
