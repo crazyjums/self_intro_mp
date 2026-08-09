@@ -1,6 +1,6 @@
 <view class="home-page">
   <view class="hero-card anim {{shown ? 'show' : ''}}">
-    <image class="hero-bg" src="/images/tech-bg.png" mode="aspectFill" />
+    <image class="hero-bg" src="/images/tech-bg.jpg" mode="aspectFill" />
     <view class="hero-shade"></view>
     <view class="hero-content">
       <view class="hero-topline">

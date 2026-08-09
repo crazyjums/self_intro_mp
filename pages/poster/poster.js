@@ -22,7 +22,7 @@ Page({
   draw() {
     const profile = app.globalData.profile
     const that = this
-    wx.getImageInfo({ src: '/images/tech-bg.png', success: () => that.paint(profile), fail: () => that.paint(profile) })
+    wx.getImageInfo({ src: '/images/tech-bg.jpg', success: () => that.paint(profile), fail: () => that.paint(profile) })
   },
 
   paint(profile) {
@@ -32,7 +32,7 @@ Page({
 
     ctx.setFillStyle('#071019')
     ctx.fillRect(0, 0, W, H)
-    ctx.drawImage('/images/tech-bg.png', 0, 0, W, H)
+    ctx.drawImage('/images/tech-bg.jpg', 0, 0, W, H)
 
     ctx.setFillStyle('#10B981')
     ctx.fillRect(0, 0, W, 5)

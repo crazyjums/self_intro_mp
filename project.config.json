@@ -1,7 +1,12 @@
 {
   "description": "个人介绍微信小程序",
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      { "type": "folder", "value": "design" },
+      { "type": "folder", "value": "tools" },
+      { "type": "folder", "value": "data/pdf" },
+      { "type": "file", "value": "project.private.config.json" }
+    ],
     "include": []
   },
   "setting": {
