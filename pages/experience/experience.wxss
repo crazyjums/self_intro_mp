@@ -3,8 +3,8 @@
 .growth-row { display: flex; min-height: 112rpx; }
 .growth-year { width: 72rpx; flex-shrink: 0; padding-top: 6rpx; color: var(--ink-2); font-size: 23rpx; font-weight: 700; }
 .growth-node { display: flex; flex-direction: column; align-items: center; width: 42rpx; margin-right: 22rpx; }
-.growth-dot { display: flex; align-items: center; justify-content: center; width: 30rpx; height: 30rpx; border: 6rpx solid #D9F4E8; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-size: 15rpx; font-weight: 700; }
-.growth-line { width: 2rpx; flex: 1; margin-top: 8rpx; background: #BFE6D4; }
+.growth-dot { display: flex; align-items: center; justify-content: center; width: 30rpx; height: 30rpx; border: 6rpx solid rgba(121,255,190,.22); border-radius: 50%; background: var(--accent); color: #032516; box-shadow: 0 0 14rpx rgba(67,245,154,.36); font-size: 15rpx; font-weight: 700; }
+.growth-line { width: 2rpx; flex: 1; margin-top: 8rpx; background: linear-gradient(var(--accent), rgba(67,245,154,.08)); }
 .growth-copy { flex: 1; padding: 2rpx 0 32rpx; }
 .growth-title { font-size: 26rpx; font-weight: 700; }
 .growth-detail { margin-top: 7rpx; color: var(--ink-3); font-size: 21rpx; line-height: 1.5; }

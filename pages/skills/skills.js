@@ -45,7 +45,7 @@ Page({
         else ctx.lineTo(x, y)
       }
       ctx.closePath()
-      ctx.setStrokeStyle('#DDE6E2')
+      ctx.setStrokeStyle('rgba(143, 212, 178, 0.22)')
       ctx.stroke()
     }
 
@@ -54,7 +54,7 @@ Page({
       ctx.beginPath()
       ctx.moveTo(centerX, centerY)
       ctx.lineTo(centerX + Math.cos(angle) * radius, centerY + Math.sin(angle) * radius)
-      ctx.setStrokeStyle('#DDE6E2')
+      ctx.setStrokeStyle('rgba(143, 212, 178, 0.22)')
       ctx.stroke()
     }
 
@@ -67,13 +67,13 @@ Page({
       else ctx.lineTo(x, y)
     })
     ctx.closePath()
-    ctx.setFillStyle('rgba(48, 190, 124, .32)')
+    ctx.setFillStyle('rgba(67, 245, 154, .22)')
     ctx.fill()
-    ctx.setStrokeStyle('#28B477')
+    ctx.setStrokeStyle('#45F59A')
     ctx.setLineWidth(2)
     ctx.stroke()
 
-    ctx.setFillStyle('#28B477')
+    ctx.setFillStyle('#55F6A7')
     values.forEach((value, i) => {
       const angle = -Math.PI / 2 + (Math.PI * 2 * i) / count
       const x = centerX + Math.cos(angle) * radius * value
@@ -83,7 +83,7 @@ Page({
       ctx.fill()
     })
 
-    ctx.setFillStyle('#51585D')
+    ctx.setFillStyle('#B7CCC5')
     ctx.setFontSize(11)
     labels.forEach((label, i) => {
       const angle = -Math.PI / 2 + (Math.PI * 2 * i) / count

@@ -12,10 +12,10 @@
     "pages/contact/contact"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarBackgroundColor": "#061014",
     "navigationBarTitleText": "朱洪根",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#F7F8FA",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#02090D",
     "backgroundTextStyle": "light"
   },
   "tabBar": {

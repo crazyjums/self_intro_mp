@@ -1,7 +1,7 @@
 .contact-hero {
   text-align: center;
   padding: 60rpx 40rpx;
-  background: #FFFFFF;
+  background: radial-gradient(circle at 50% 0%, rgba(43,159,108,.24), rgba(8,29,30,.94) 70%);
 }
 
 .page { padding-bottom: 150rpx; }
@@ -89,7 +89,7 @@
   display: inline-block;
   padding: 20rpx;
   background: #FFFFFF;
-  border: 1rpx solid var(--line);
+  border: 1rpx solid rgba(116,255,188,.26);
   border-radius: 16rpx;
   transition: transform 0.15s ease;
 }

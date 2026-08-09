@@ -5,7 +5,7 @@
     <view class="hero-content">
       <view class="hero-topline">
         <view class="online-dot"></view>
-        <text>个人技术档案</text>
+        <text>在线 · 可接洽</text>
       </view>
       <view class="identity-row">
         <image class="avatar" src="{{profile.avatar}}" mode="aspectFill" />
@@ -13,7 +13,7 @@
           <view class="hero-name">{{profile.name}}</view>
           <view class="hero-en">{{profile.enName}}</view>
           <view class="hero-role">{{profile.shortTitle}}</view>
-          <view class="hero-subtitle">{{profile.title}}</view>
+          <view class="hero-subtitle">北京 · {{profile.title}}</view>
         </view>
       </view>
       <view class="hero-slogan">{{profile.oneLiner}}</view>
@@ -24,7 +24,7 @@
   </view>
 
   <view class="metric-card anim {{shown ? 'show' : ''}}" style="animation-delay:.08s;">
-    <view class="metric" wx:for="{{profile.metrics}}" wx:key="label">
+    <view class="metric" wx:for="{{metrics}}" wx:key="label">
       <view class="metric-value">{{item.value}}</view>
       <view class="metric-label">{{item.label}}</view>
     </view>

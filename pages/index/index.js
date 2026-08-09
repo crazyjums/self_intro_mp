@@ -6,13 +6,14 @@ Page({
   data: {
     profile: {},
     projects: [],
+    metrics: [],
     shown: false,
     assets
   },
 
   onLoad() {
     const profile = app.globalData.profile
-    this.setData({ profile, projects: profile.projects.slice(0, 3) })
+    this.setData({ profile, projects: profile.projects.slice(0, 3), metrics: profile.metrics.slice(0, 3) })
   },
 
   onReady() {
