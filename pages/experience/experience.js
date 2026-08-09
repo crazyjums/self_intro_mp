@@ -2,8 +2,7 @@ const app = getApp()
 
 Page({
   data: {
-    profile: {},
-    pdfUrl: 'https://jums.club/pdf/resume2.pdf'
+    profile: {}
   },
 
   onLoad() {
@@ -12,26 +11,27 @@ Page({
 
   openPdf() {
     wx.showLoading({ title: '加载中' })
-    wx.downloadFile({
-      url: this.data.pdfUrl,
-      success: (res) => {
+    const fs = wx.getFileSystemManager()
+    const destPath = `${wx.env.USER_DATA_PATH}/resume2.pdf`
+    fs.copyFile({
+      srcPath: 'data/pdf/resume2.pdf',
+      destPath,
+      success: () => {
         wx.hideLoading()
-        if (res.statusCode !== 200) {
-          wx.showToast({ title: '下载失败', icon: 'none' })
-          return
-        }
         wx.openDocument({
-          filePath: res.tempFilePath,
+          filePath: destPath,
           fileType: 'pdf',
           showMenu: true,
-          fail: () => {
+          fail: (err) => {
+            console.error('openDocument fail', err)
             wx.showToast({ title: '打开失败', icon: 'none' })
           }
         })
       },
-      fail: () => {
+      fail: (err) => {
         wx.hideLoading()
-        wx.showToast({ title: '网络异常', icon: 'none' })
+        console.error('copyFile fail', err)
+        wx.showToast({ title: '读取失败', icon: 'none' })
       }
     })
   },

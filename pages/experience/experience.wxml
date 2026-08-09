@@ -4,7 +4,7 @@
       <text class="pdf-btn-icon">📄</text>
       <view class="pdf-btn-text">
         <view class="pdf-btn-title">查看 PDF 简历</view>
-        <view class="pdf-btn-sub label">下载并打开完整版简历</view>
+        <view class="pdf-btn-sub label">点击查看完整版简历</view>
       </view>
       <text class="pdf-btn-arrow">›</text>
     </view>
