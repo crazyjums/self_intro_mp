@@ -1,9 +1,11 @@
-.poster-page { min-height: 100vh; padding: 12rpx 24rpx 150rpx; background: #02090D; }
-.poster-header { margin-bottom: 20rpx; }
-.poster-frame { position: relative; width: 375px; height: 600px; margin: 0 auto; overflow: hidden; border-radius: 22rpx; box-shadow: 0 18rpx 60rpx rgba(0,0,0,.2); transform: scale(.92); transform-origin: top center; margin-bottom: -48rpx; }
-canvas { display: block; width: 375px; height: 600px; }
-.qr-overlay { position: absolute; left: 223px; top: 442px; width: 100px; height: 100px; border-radius: 4px; }
-.poster-tip { color: var(--ink-3); font-size: 21rpx; text-align: center; }
+.poster-page { min-height: 100vh; padding: 12rpx 24rpx 170rpx; background: radial-gradient(circle at 50% 0%, rgba(20,88,62,.2), transparent 34%), #02090D; }
+.poster-header { margin-bottom: 8rpx; }
+.poster-subtitle { margin-bottom: 22rpx; color: #8BA29B; font-size: 22rpx; letter-spacing: 1rpx; text-align: center; }
+.poster-subtitle::after { content: ''; display: block; width: 38rpx; height: 4rpx; margin: 12rpx auto 0; border-radius: 999rpx; background: var(--accent); box-shadow: 0 0 12rpx rgba(67,245,154,.72); }
+.poster-frame { position: relative; width: 375px; height: 660px; margin: 0 auto; overflow: hidden; border: 1px solid rgba(119,255,190,.28); border-radius: 22px; box-shadow: 0 24px 70px rgba(0,0,0,.44), 0 0 28px rgba(67,245,154,.08); transform: scale(.88); transform-origin: top center; margin-bottom: -79px; }
+canvas { display: block; width: 375px; height: 660px; }
+.qr-overlay { position: absolute; left: 228px; top: 380px; width: 99px; height: 99px; border-radius: 8px; }
+.poster-tip { padding: 0 24rpx; color: var(--ink-3); font-size: 21rpx; line-height: 1.5; text-align: center; }
 .poster-actions { display: flex; gap: 18rpx; margin-top: 24rpx; }
 .poster-actions .btn { flex: 1; height: 82rpx; font-size: 25rpx; }
 .poster-actions button.btn { margin: 0; padding: 0; line-height: 82rpx; }

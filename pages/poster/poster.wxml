@@ -2,15 +2,16 @@
   <view class="page-header poster-header">
     <text class="header-action" bindtap="goBack">‹</text>
     <text class="page-header-title">分享我的名片</text>
-    <text class="header-action">↗</text>
+    <text class="header-action">···</text>
   </view>
+  <view class="poster-subtitle">一张名片 · 连接无限可能</view>
   <view class="poster-frame">
-    <canvas canvas-id="poster" style="width: 375px; height: 600px;"></canvas>
+    <canvas canvas-id="poster" style="width: 375px; height: 660px;"></canvas>
     <image class="qr-overlay" src="{{assets.wechatQr}}" mode="aspectFill" show-menu-by-longpress bindlongpress="onQrLongPress" />
   </view>
-  <view class="poster-tip">扫码了解更多</view>
+  <view class="poster-tip">长按二维码复制微信号，扫码查看完整技术履历</view>
   <view class="poster-actions">
-    <view class="btn btn-primary" bindtap="save">保存图片</view>
+    <view class="btn btn-primary" bindtap="save">保存名片</view>
     <button class="btn btn-ghost share-btn" open-type="share">分享给朋友</button>
   </view>
   <tabbar active="profile" />
