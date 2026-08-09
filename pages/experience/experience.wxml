@@ -11,10 +11,29 @@
   </view>
 
   <view class="card">
-    <view class="card-title">教育 / 工作经历</view>
+    <view class="card-title">工作经历</view>
     <view class="timeline">
-      <view class="timeline-item" wx:for="{{profile.experience}}" wx:key="period">
-        <view class="timeline-dot {{item.type}}"></view>
+      <view class="timeline-item" wx:for="{{profile.workExperience}}" wx:key="period">
+        <view class="timeline-dot work"></view>
+        <view class="timeline-body">
+          <view class="timeline-period">{{item.period}}</view>
+          <view class="timeline-title">{{item.title}}</view>
+          <view class="timeline-org">{{item.org}}</view>
+          <view class="timeline-points">
+            <view class="timeline-point" wx:for="{{item.points}}" wx:for-item="point" wx:key="*this">
+              {{point}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">教育经历</view>
+    <view class="timeline">
+      <view class="timeline-item" wx:for="{{profile.educationExperience}}" wx:key="period">
+        <view class="timeline-dot education"></view>
         <view class="timeline-body">
           <view class="timeline-period">{{item.period}}</view>
           <view class="timeline-title">{{item.title}}</view>

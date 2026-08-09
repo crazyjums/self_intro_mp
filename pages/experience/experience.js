@@ -1,4 +1,5 @@
 const app = getApp()
+const resumePdfBase64 = require('../../data/pdf/resume2_pdf.js')
 
 Page({
   data: {
@@ -13,9 +14,9 @@ Page({
     wx.showLoading({ title: '加载中' })
     const fs = wx.getFileSystemManager()
     const destPath = `${wx.env.USER_DATA_PATH}/resume2.pdf`
-    fs.copyFile({
-      srcPath: 'data/pdf/resume2.pdf',
-      destPath,
+    fs.writeFile({
+      filePath: destPath,
+      data: wx.base64ToArrayBuffer(resumePdfBase64),
       success: () => {
         wx.hideLoading()
         wx.openDocument({
@@ -30,8 +31,8 @@ Page({
       },
       fail: (err) => {
         wx.hideLoading()
-        console.error('copyFile fail', err)
-        wx.showToast({ title: '读取失败', icon: 'none' })
+        console.error('writeFile fail', err)
+        wx.showToast({ title: '写入失败', icon: 'none' })
       }
     })
   },

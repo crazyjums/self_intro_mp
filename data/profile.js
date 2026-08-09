@@ -61,9 +61,8 @@ const profile = {
     }
   ],
 
-  experience: [
+  workExperience: [
     {
-      type: 'work',
       period: '2021.07 - 2023.07',
       title: '服务端开发工程师',
       org: '360 · 花椒直播技术部',
@@ -73,9 +72,11 @@ const profile = {
         '完成才艺点单项目，相较旧项目流水提升约 100%',
         '参与用户系统上云，在不停服情况下将接口流量平滑切换至华为云'
       ]
-    },
+    }
+  ],
+
+  educationExperience: [
     {
-      type: 'education',
       period: '2018.09 - 2021.07',
       title: '硕士研究生 · 计算机专业',
       org: '华北科技学院（研究方向：数据挖掘与预测）',
