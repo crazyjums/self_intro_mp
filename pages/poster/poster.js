@@ -103,18 +103,11 @@ Page({
 
     // WeChat QR code
     ctx.setFillStyle('#FFFFFF')
-    ctx.fillRect(W - 150, 452, 96, 96)
-    ctx.save()
-    ctx.beginPath()
-    ctx.arc(W - 102, 500, 46, 0, Math.PI * 2)
-    ctx.clip()
-    ctx.drawImage('/images/wechat.jpg', W - 148, 454, 92, 92)
-    ctx.restore()
+    ctx.fillRect(W - 158, 444, 112, 112)
+    ctx.drawImage('/images/wechat.jpg', W - 152, 450, 100, 100)
     ctx.strokeStyle = '#10B981'
     ctx.lineWidth = 2
-    ctx.beginPath()
-    ctx.arc(W - 102, 500, 47, 0, Math.PI * 2)
-    ctx.stroke()
+    ctx.strokeRect(W - 158, 444, 112, 112)
 
     ctx.setFillStyle('#6B7280')
     ctx.setFontSize(11)
@@ -122,6 +115,15 @@ Page({
     ctx.fillText('jums.club', W / 2, 580)
 
     ctx.draw()
+  },
+
+  onQrLongPress() {
+    wx.setClipboardData({
+      data: 'crazyjumsz',
+      success: () => {
+        wx.showToast({ title: '微信号已复制，去添加好友吧', icon: 'none' })
+      }
+    })
   },
 
   save() {

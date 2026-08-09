@@ -1,5 +1,9 @@
 <view class="poster-wrap">
-  <canvas canvas-id="poster" style="width: 375px; height: 600px;"></canvas>
-  <view class="poster-tip">分享到朋友圈，让更多人认识你</view>
+  <view class="poster-frame">
+    <canvas canvas-id="poster" style="width: 375px; height: 600px;"></canvas>
+    <image class="qr-overlay" src="/images/wechat.jpg" mode="aspectFill"
+      show-menu-by-longpress bindlongpress="onQrLongPress" />
+  </view>
+  <view class="poster-tip">长按二维码识别 · 添加我的微信</view>
   <view class="btn btn-primary poster-btn" bindtap="save">保存海报到相册</view>
 </view>

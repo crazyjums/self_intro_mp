@@ -5,11 +5,27 @@
   align-items: center;
 }
 
-canvas {
+.poster-frame {
+  position: relative;
   width: 375px;
   height: 600px;
   border-radius: 24px;
+  overflow: hidden;
   box-shadow: 0 24rpx 80rpx rgba(0, 0, 0, 0.25);
+}
+
+canvas {
+  width: 375px;
+  height: 600px;
+}
+
+.qr-overlay {
+  position: absolute;
+  left: 223px;
+  top: 450px;
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
 }
 
 .poster-tip {

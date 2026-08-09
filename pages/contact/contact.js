@@ -27,5 +27,18 @@ Page({
 
   goPoster() {
     wx.navigateTo({ url: '/pages/poster/poster' })
+  },
+
+  previewQr() {
+    wx.previewImage({
+      urls: ['/images/wechat.jpg'],
+      success: () => {
+        wx.showToast({
+          title: '长按可识别二维码',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   }
 })

@@ -16,6 +16,15 @@
     </view>
   </view>
 
+  <view class="card qr-card">
+    <view class="qr-title">扫码加我微信</view>
+    <view class="qr-wrap" bindtap="previewQr" hover-class="press">
+      <image class="qr-img" src="/images/wechat.jpg" mode="aspectFit" />
+      <view class="qr-tip">点击放大二维码</view>
+    </view>
+    <view class="qr-hint muted">提示：微信个人二维码可能无法长按识别，可复制微信号搜索添加</view>
+  </view>
+
   <view class="btn btn-primary action" bindtap="saveContact">保存联系方式</view>
   <view class="btn btn-ghost action" bindtap="goPoster">生成我的简历海报</view>
 </view>
