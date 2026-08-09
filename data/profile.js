@@ -1,7 +1,9 @@
+const assets = require('./assets.js')
+
 const profile = {
   name: '朱洪根',
   enName: 'Zhuhonggen',
-  avatar: '/images/avatar.png',
+  avatar: assets.avatar,
   title: 'Senior Backend Engineer',
   shortTitle: '后端开发工程师 / SRE',
   oneLiner: '专注后端开发、DevOps 平台建设与工程效率提升',

@@ -1,4 +1,5 @@
 const app = getApp()
+const assets = require('../../data/assets.js')
 
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath()
@@ -12,7 +13,8 @@ function roundRect(ctx, x, y, w, h, r) {
 
 Page({
   data: {
-    saved: false
+    saved: false,
+    assets
   },
 
   onReady() {
@@ -21,23 +23,39 @@ Page({
 
   draw() {
     const profile = app.globalData.profile
-    const that = this
-    wx.getImageInfo({ src: '/images/tech-bg.jpg', success: () => that.paint(profile), fail: () => that.paint(profile) })
+    const sources = {
+      techBg: assets.techBg,
+      avatar: assets.avatar,
+      wechatQr: assets.wechatQr
+    }
+    const paths = {}
+    let remaining = Object.keys(sources).length
+    Object.keys(sources).forEach((key) => {
+      wx.getImageInfo({
+        src: sources[key],
+        success: (res) => { paths[key] = res.path },
+        fail: () => { paths[key] = sources[key] },
+        complete: () => {
+          remaining -= 1
+          if (remaining === 0) this.paint(profile, paths)
+        }
+      })
+    })
   },
 
-  paint(profile) {
+  paint(profile, paths) {
     const ctx = wx.createCanvasContext('poster', this)
     const W = 375
     const H = 600
 
     ctx.setFillStyle('#071019')
     ctx.fillRect(0, 0, W, H)
-    ctx.drawImage('/images/tech-bg.jpg', 0, 0, W, H)
+    ctx.drawImage(paths.techBg, 0, 0, W, H)
 
     ctx.setFillStyle('#10B981')
     ctx.fillRect(0, 0, W, 5)
 
-    const avatarPath = '/images/avatar.png'
+    const avatarPath = paths.avatar
     ctx.save()
     ctx.beginPath()
     ctx.arc(W / 2, 64, 36, 0, Math.PI * 2)
@@ -89,7 +107,7 @@ Page({
     // WeChat QR code
     ctx.setFillStyle('#FFFFFF')
     ctx.fillRect(W - 158, 444, 112, 112)
-    ctx.drawImage('/images/wechat.jpg', W - 152, 450, 100, 100)
+    ctx.drawImage(paths.wechatQr, W - 152, 450, 100, 100)
     ctx.strokeStyle = '#10B981'
     ctx.lineWidth = 2
     ctx.strokeRect(W - 158, 444, 112, 112)

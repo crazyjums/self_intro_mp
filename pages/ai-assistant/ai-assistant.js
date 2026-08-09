@@ -1,6 +1,9 @@
+const assets = require('../../data/assets.js')
+
 Page({
   data: {
     draft: '',
+    assets,
     scrollInto: 'chat-end',
     suggestions: ['介绍一下你的CI/CD发布平台', '你的技术栈是什么？'],
     messages: [

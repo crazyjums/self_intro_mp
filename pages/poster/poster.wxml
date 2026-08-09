@@ -6,7 +6,7 @@
   </view>
   <view class="poster-frame">
     <canvas canvas-id="poster" style="width: 375px; height: 600px;"></canvas>
-    <image class="qr-overlay" src="/images/wechat.jpg" mode="aspectFill" show-menu-by-longpress bindlongpress="onQrLongPress" />
+    <image class="qr-overlay" src="{{assets.wechatQr}}" mode="aspectFill" show-menu-by-longpress bindlongpress="onQrLongPress" />
   </view>
   <view class="poster-tip">扫码了解更多</view>
   <view class="poster-actions">

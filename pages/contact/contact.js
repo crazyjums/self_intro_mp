@@ -1,8 +1,10 @@
 const app = getApp()
+const assets = require('../../data/assets.js')
 
 Page({
   data: {
-    contacts: []
+    contacts: [],
+    assets
   },
 
   onLoad() {
@@ -31,7 +33,7 @@ Page({
 
   previewQr() {
     wx.previewImage({
-      urls: ['/images/wechat.jpg'],
+      urls: [this.data.assets.wechatQr],
       success: () => {
         wx.showToast({
           title: '长按可识别二维码',

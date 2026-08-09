@@ -1,10 +1,12 @@
 const app = getApp()
+const assets = require('../../data/assets.js')
 
 Page({
   data: {
     profile: {},
     projects: [],
-    shown: false
+    shown: false,
+    assets
   },
 
   onLoad() {
