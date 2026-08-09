@@ -1,0 +1,26 @@
+<view class="page articles-page">
+  <view class="page-header">
+    <text class="header-action">‹</text>
+    <text class="page-header-title">技术文章</text>
+    <text class="header-action">···</text>
+  </view>
+
+  <scroll-view class="article-filter-scroll" scroll-x="true" show-scrollbar="false">
+    <view class="article-filters">
+      <text wx:for="{{filters}}" wx:key="*this" wx:for-item="filter"
+        class="article-filter {{activeFilter === filter ? 'active' : ''}}" data-filter="{{filter}}" bindtap="selectFilter">{{filter}}</text>
+    </view>
+  </scroll-view>
+
+  <view class="article-list">
+    <view class="article-card" wx:for="{{visibleArticles}}" wx:key="title" data-title="{{item.title}}" bindtap="openArticle" hover-class="press">
+      <view class="article-thumb thumb-{{index % 5}}">{{item.icon}}</view>
+      <view class="article-copy">
+        <view class="article-title">{{item.title}}</view>
+        <view class="article-desc">{{item.category}} · 技术实践与经验总结</view>
+        <view class="article-meta">{{item.date}}　◉ {{item.views}} 阅读</view>
+      </view>
+    </view>
+  </view>
+  <tabbar active="profile" />
+</view>

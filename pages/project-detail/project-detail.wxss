@@ -105,13 +105,13 @@
   color: #FFFFFF;
 }
 
-.gw { background: linear-gradient(135deg, #00ADD8, #00C0E0); }
-.py { background: linear-gradient(135deg, #3776AB, #4B8BBE); }
-.jk { background: linear-gradient(135deg, #D24939, #E05D4C); }
-.k8s { background: linear-gradient(135deg, #326CE5, #5B8DEF); }
-.rd { background: linear-gradient(135deg, #DC382D, #E8590C); }
-.my { background: linear-gradient(135deg, #00758F, #00A4BD); }
-.kf { background: linear-gradient(135deg, #262626, #434343); }
+.gw { background: #00ADD8; }
+.py { background: #3776AB; }
+.jk { background: #D24939; }
+.k8s { background: #326CE5; }
+.rd { background: #DC382D; }
+.my { background: #00758F; }
+.kf { background: #262626; }
 
 .arch-flow {
   text-align: center;
@@ -145,3 +145,5 @@
 .anim.show {
   animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+.page { padding-bottom: 150rpx; }

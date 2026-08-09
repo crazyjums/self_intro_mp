@@ -22,15 +22,7 @@ Page({
   draw() {
     const profile = app.globalData.profile
     const that = this
-    wx.getImageInfo({
-      src: '/images/wechat.jpg',
-      success: () => {
-        that.paint(profile)
-      },
-      fail: () => {
-        that.paint(profile)
-      }
-    })
+    wx.getImageInfo({ src: '/images/tech-bg.png', success: () => that.paint(profile), fail: () => that.paint(profile) })
   },
 
   paint(profile) {
@@ -38,19 +30,12 @@ Page({
     const W = 375
     const H = 600
 
-    const bg = ctx.createLinearGradient(0, 0, W, H)
-    bg.addColorStop(0, '#0B0F0E')
-    bg.addColorStop(1, '#0E1914')
-    ctx.setFillStyle(bg)
+    ctx.setFillStyle('#071019')
     ctx.fillRect(0, 0, W, H)
+    ctx.drawImage('/images/tech-bg.png', 0, 0, W, H)
 
     ctx.setFillStyle('#10B981')
-    ctx.fillRect(0, 0, W, 6)
-
-    ctx.setFillStyle('#1A2E26')
-    ctx.beginPath()
-    ctx.arc(W, 0, 120, 0, Math.PI * 2)
-    ctx.fill()
+    ctx.fillRect(0, 0, W, 5)
 
     const avatarPath = '/images/avatar.png'
     ctx.save()
@@ -62,12 +47,12 @@ Page({
 
     ctx.setTextAlign('center')
     ctx.setFillStyle('#FFFFFF')
-    ctx.setFontSize(30)
+    ctx.setFontSize(28)
     ctx.fillText(profile.name, W / 2, 138)
 
     ctx.setFillStyle('#34D399')
-    ctx.setFontSize(15)
-    ctx.fillText(profile.title, W / 2, 170)
+    ctx.setFontSize(14)
+    ctx.fillText(profile.shortTitle, W / 2, 170)
 
     ctx.setFillStyle('#8E8E93')
     ctx.setFontSize(13)
@@ -89,7 +74,7 @@ Page({
     })
 
     // bottom bar
-    ctx.setFillStyle('rgba(255,255,255,0.08)')
+    ctx.setFillStyle('rgba(4, 20, 23, 0.82)')
     roundRect(ctx, 28, 440, W - 56, 120, 20)
     ctx.fill()
 
@@ -150,5 +135,16 @@ Page({
         })
       }
     })
+  },
+
+  goBack() {
+    wx.navigateBack({ fail: () => wx.switchTab({ url: '/pages/profile/profile' }) })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: '朱洪根的个人技术名片',
+      path: '/pages/index/index'
+    }
   }
 })

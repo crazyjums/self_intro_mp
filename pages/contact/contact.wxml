@@ -27,4 +27,5 @@
 
   <view class="btn btn-primary action" bindtap="saveContact">保存联系方式</view>
   <view class="btn btn-ghost action" bindtap="goPoster">生成我的简历海报</view>
+  <tabbar active="profile" />
 </view>

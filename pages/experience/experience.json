@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "经历"
+  "navigationBarTitleText": "技术成长",
+  "usingComponents": { "tabbar": "/components/tabbar/tabbar" }
 }

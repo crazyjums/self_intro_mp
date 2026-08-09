@@ -1,8 +1,10 @@
 .contact-hero {
   text-align: center;
   padding: 60rpx 40rpx;
-  background: linear-gradient(135deg, #FFFFFF, #F0FDF8);
+  background: #FFFFFF;
 }
+
+.page { padding-bottom: 150rpx; }
 
 .contact-hero-name {
   font-size: 44rpx;

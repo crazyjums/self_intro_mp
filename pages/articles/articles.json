@@ -1,4 +1,4 @@
 {
-  "navigationBarTitleText": "分享我的名片",
+  "navigationBarTitleText": "技术文章",
   "usingComponents": { "tabbar": "/components/tabbar/tabbar" }
 }

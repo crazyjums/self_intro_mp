@@ -1,93 +1,10 @@
-.tl {
-  display: flex;
-  padding: 12rpx 0;
-}
-
-.tl-node {
-  width: 36rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 28rpx;
-}
-
-.tl-dot {
-  width: 22rpx;
-  height: 22rpx;
-  border-radius: 50%;
-  margin-top: 10rpx;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 8rpx var(--soft-ring, rgba(16, 185, 129, 0.15));
-}
-
-.tl-dot.work {
-  background: var(--accent);
-  --soft-ring: rgba(16, 185, 129, 0.15);
-}
-
-.tl-dot.edu {
-  background: #1D1D1F;
-  --soft-ring: rgba(29, 29, 31, 0.1);
-}
-
-.tl-line {
-  flex: 1;
-  width: 2rpx;
-  background: var(--line);
-  margin-top: 12rpx;
-}
-
-.tl-body {
-  flex: 1;
-  padding-bottom: 40rpx;
-}
-
-.tl:last-child .tl-body {
-  padding-bottom: 8rpx;
-}
-
-.tl-period {
-  font-size: 24rpx;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 1rpx;
-}
-
-.tl:last-child .tl-dot.edu .tl-line,
-.tl:last-child .tl-line {
-  display: none;
-}
-
-.tl-title {
-  margin-top: 8rpx;
-  font-size: 32rpx;
-  font-weight: 700;
-}
-
-.tl-org {
-  margin-top: 4rpx;
-  font-size: 26rpx;
-}
-
-.tl-points {
-  margin-top: 14rpx;
-}
-
-.tl-point {
-  position: relative;
-  padding: 6rpx 0 6rpx 26rpx;
-  font-size: 26rpx;
-  color: var(--ink-2);
-}
-
-.tl-point::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 18rpx;
-  width: 12rpx;
-  height: 12rpx;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.35;
-}
+.growth-page { padding-top: 12rpx; padding-bottom: 150rpx; }
+.growth-list { padding: 22rpx 0 50rpx; }
+.growth-row { display: flex; min-height: 112rpx; }
+.growth-year { width: 72rpx; flex-shrink: 0; padding-top: 6rpx; color: var(--ink-2); font-size: 23rpx; font-weight: 700; }
+.growth-node { display: flex; flex-direction: column; align-items: center; width: 42rpx; margin-right: 22rpx; }
+.growth-dot { display: flex; align-items: center; justify-content: center; width: 30rpx; height: 30rpx; border: 6rpx solid #D9F4E8; border-radius: 50%; background: var(--accent); color: #FFFFFF; font-size: 15rpx; font-weight: 700; }
+.growth-line { width: 2rpx; flex: 1; margin-top: 8rpx; background: #BFE6D4; }
+.growth-copy { flex: 1; padding: 2rpx 0 32rpx; }
+.growth-title { font-size: 26rpx; font-weight: 700; }
+.growth-detail { margin-top: 7rpx; color: var(--ink-3); font-size: 21rpx; line-height: 1.5; }

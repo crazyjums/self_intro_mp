@@ -1,0 +1,33 @@
+<view class="ai-page">
+  <view class="ai-header">
+    <text class="ai-back" bindtap="goBack">‹</text>
+    <text class="ai-title">AI助手</text>
+    <text class="ai-more">•••</text>
+  </view>
+
+  <scroll-view class="chat-scroll" scroll-y="true" scroll-into-view="{{scrollInto}}">
+    <view class="chat-list">
+      <view class="welcome-card">
+        <image src="/images/ai-bot.png" mode="aspectFit" />
+        <view class="welcome-copy">
+          <view class="welcome-title">你好，我是朱洪根的AI助手</view>
+          <view class="welcome-desc">基于我的经历和项目知识训练，你可以问我任何关于我的问题。</view>
+        </view>
+      </view>
+
+      <view class="suggestion-row">
+        <view class="suggestion" wx:for="{{suggestions}}" wx:key="*this" data-text="{{item}}" bindtap="useSuggestion">{{item}}</view>
+      </view>
+
+      <view class="message-row {{item.role}}" wx:for="{{messages}}" wx:key="id" id="msg-{{item.id}}">
+        <view class="message-bubble">{{item.text}}</view>
+      </view>
+      <view class="message-end" id="chat-end"></view>
+    </view>
+  </scroll-view>
+
+  <view class="composer-wrap">
+    <input class="composer" value="{{draft}}" placeholder="你可以问我任何问题..." confirm-type="send" bindinput="onInput" bindconfirm="sendMessage" />
+    <view class="send-btn {{draft ? 'ready' : ''}}" bindtap="sendMessage">↗</view>
+  </view>
+</view>

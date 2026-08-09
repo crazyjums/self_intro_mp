@@ -60,4 +60,5 @@
       <view class="result-chip" wx:for="{{project.results}}" wx:key="*this">{{item}}</view>
     </view>
   </view>
+  <tabbar active="projects" />
 </view>

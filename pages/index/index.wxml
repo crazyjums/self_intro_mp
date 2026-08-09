@@ -1,64 +1,65 @@
-<view class="page">
-  <!-- Hero -->
-  <view class="hero anim {{shown ? 'show' : ''}}">
-    <view class="hero-inner">
-      <image class="avatar" src="{{profile.avatar}}" mode="aspectFill" />
-      <view class="hero-name">{{profile.name}}</view>
-      <view class="hero-en">{{profile.enName}}</view>
-      <view class="hero-role">{{profile.title}}</view>
-      <view class="hero-line">{{profile.oneLiner}}</view>
-    </view>
-  </view>
-
-  <!-- Tech tags -->
-  <view class="card anim" style="animation-delay: .08s;">
-    <view class="section-title-sm">技术栈</view>
-    <view class="tag-cloud">
-      <view class="tag" wx:for="{{profile.tags}}" wx:key="*this" bindtap="onTapTag">{{item}}</view>
-    </view>
-  </view>
-
-  <!-- 我的经历 -->
-  <view class="section-head anim" style="animation-delay: .14s;">
-    <text class="section-title">我的经历</text>
-    <text class="section-link" bindtap="goExperience">查看全部</text>
-  </view>
-  <view class="card career anim" style="animation-delay: .2s;">
-    <view class="career-period">{{profile.career.period}}</view>
-    <view class="career-role">{{profile.career.role}}</view>
-    <view class="career-org muted">{{profile.career.company}}</view>
-    <view class="career-list">
-      <view class="career-item" wx:for="{{profile.career.highlights}}" wx:key="*this">
-        <view class="dot"></view>{{item}}
+<view class="home-page">
+  <view class="hero-card anim {{shown ? 'show' : ''}}">
+    <image class="hero-bg" src="/images/tech-bg.png" mode="aspectFill" />
+    <view class="hero-shade"></view>
+    <view class="hero-content">
+      <view class="hero-topline">
+        <view class="online-dot"></view>
+        <text>个人技术档案</text>
+      </view>
+      <view class="identity-row">
+        <image class="avatar" src="{{profile.avatar}}" mode="aspectFill" />
+        <view class="identity-copy">
+          <view class="hero-name">{{profile.name}}</view>
+          <view class="hero-en">{{profile.enName}}</view>
+          <view class="hero-role">{{profile.shortTitle}}</view>
+          <view class="hero-subtitle">{{profile.title}}</view>
+        </view>
+      </view>
+      <view class="hero-slogan">{{profile.oneLiner}}</view>
+      <view class="hero-tags">
+        <view class="dark-tag" wx:for="{{profile.tags}}" wx:key="*this">{{item}}</view>
       </view>
     </view>
   </view>
 
-  <!-- 开源主页 -->
-  <view class="section-head anim" style="animation-delay: .26s;">
-    <text class="section-title">开源主页</text>
-  </view>
-  <view class="social-grid anim" style="animation-delay: .3s;">
-    <view class="social-card" wx:for="{{profile.socials}}" wx:key="name"
-      data-url="{{item.url}}" bindtap="openSocial" hover-class="press">
-      <view class="social-icon">{{item.icon}}</view>
-      <view class="social-name">{{item.name}}</view>
-      <view class="social-value caption">{{item.value}}</view>
+  <view class="metric-card anim {{shown ? 'show' : ''}}" style="animation-delay:.08s;">
+    <view class="metric" wx:for="{{profile.metrics}}" wx:key="label">
+      <view class="metric-value">{{item.value}}</view>
+      <view class="metric-label">{{item.label}}</view>
     </view>
   </view>
 
-  <!-- 技术文章 -->
-  <view class="section-head anim" style="animation-delay: .36s;">
-    <text class="section-title">技术文章</text>
-    <text class="section-link" bindtap="copyBlog">博客地址</text>
+  <view class="section-head anim {{shown ? 'show' : ''}}" style="animation-delay:.14s;">
+    <text class="section-title">代表项目</text>
+    <text class="section-link" bindtap="goProjects">查看更多 ›</text>
   </view>
-  <view class="card list-card anim" style="animation-delay: .4s;">
-    <view class="article-item" wx:for="{{profile.articles}}" wx:key="title">
-      <view class="article-info">
-        <view class="article-title">{{item.title}}</view>
-        <view class="article-date caption">{{item.date}}</view>
+
+  <view class="project-list anim {{shown ? 'show' : ''}}" style="animation-delay:.2s;">
+    <view class="home-project" wx:for="{{projects}}" wx:key="id"
+      data-id="{{item.id}}" bindtap="openProject" hover-class="press">
+      <view class="project-icon project-icon-{{item.id}}">{{item.id}}</view>
+      <view class="home-project-copy">
+        <view class="home-project-title">{{item.name}}</view>
+        <view class="home-project-desc">{{item.intro}}</view>
+        <view class="home-project-tags">
+          <text wx:for="{{item.tech}}" wx:for-item="tech" wx:key="*this">{{tech}}</text>
+        </view>
       </view>
-      <view class="article-cat">{{item.category}}</view>
+      <text class="chevron">›</text>
+    </view>
+  </view>
+
+  <view class="home-quick-links anim {{shown ? 'show' : ''}}" style="animation-delay:.26s;">
+    <view class="quick-link" bindtap="goSkills">
+      <image src="/images/tab-pulse-active.png" />
+      <text>我的技能</text>
+      <text class="quick-arrow">›</text>
+    </view>
+    <view class="quick-link" bindtap="goArticles">
+      <image src="/images/tab-folder-active.png" />
+      <text>技术文章</text>
+      <text class="quick-arrow">›</text>
     </view>
   </view>
 </view>

@@ -1,0 +1,17 @@
+.profile-page { padding-top: 12rpx; }
+.profile-summary { display: flex; align-items: center; padding: 28rpx 8rpx 30rpx; }
+.profile-avatar { width: 94rpx; height: 94rpx; border-radius: 50%; background: #E4ECEE; }
+.profile-copy { margin-left: 22rpx; }
+.profile-name { font-size: 32rpx; font-weight: 700; }
+.profile-title { margin-top: 5rpx; color: var(--ink-3); font-size: 21rpx; }
+.profile-location { margin-top: 6rpx; color: var(--ink-3); font-size: 19rpx; }
+.profile-menu { overflow: hidden; border-radius: 22rpx; background: #FFFFFF; box-shadow: var(--shadow); }
+.menu-row { display: flex; align-items: center; height: 88rpx; padding: 0 24rpx; border-bottom: 1rpx solid #F0F1F2; }
+.menu-row:last-child { border-bottom: none; }
+.menu-row image { width: 30rpx; height: 30rpx; margin-right: 18rpx; opacity: .68; }
+.menu-row > text:nth-child(2) { font-size: 25rpx; }
+.menu-arrow { margin-left: auto; color: #BBC1C5; font-size: 34rpx !important; }
+.secondary-menu { margin-top: 22rpx; }
+.menu-symbol { width: 30rpx; margin-right: 18rpx; color: var(--ink-3); font-size: 28rpx; text-align: center; }
+.share-btn { display: flex; align-items: center; justify-content: center; height: 84rpx; margin-top: 30rpx; border-radius: 16rpx; color: #FFFFFF; background: var(--accent); font-size: 27rpx; font-weight: 700; }
+.logout { margin-top: 18rpx; padding: 20rpx; color: #EF4444; text-align: center; font-size: 22rpx; }

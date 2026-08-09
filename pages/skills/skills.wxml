@@ -1,30 +1,25 @@
-<view class="page">
-  <view class="card skill-card anim {{shown ? 'show' : ''}}">
-    <view class="skill-summary">
-      <view class="skill-count">5</view>
-      <view class="skill-count-label muted">技术领域</view>
-    </view>
-    <view class="skill-intro">
-      后端正向高并发、云原生与工程效率方向持续深耕。
-    </view>
+<view class="page skills-page">
+  <view class="page-header">
+    <text class="header-action placeholder">‹</text>
+    <text class="page-header-title">我的技能</text>
+    <text class="header-action">···</text>
   </view>
 
-  <view class="skill-group anim {{shown ? 'show' : ''}}" style="animation-delay: .1s;"
-    wx:for="{{profile.skills}}" wx:key="group" wx:for-item="group">
-    <view class="skill-group-head">
-      <text class="skill-group-title">{{group.group}}</text>
-      <text class="skill-group-count muted">{{group.items.length}} 项</text>
-    </view>
-    <view class="card">
-      <view class="bar-item" wx:for="{{group.items}}" wx:key="name" wx:for-item="skill">
-        <view class="bar-top">
-          <text class="bar-name">{{skill.name}}</text>
-          <text class="bar-level muted">{{skill.level}}</text>
-        </view>
-        <view class="bar-track">
-          <view class="bar-fill" style="width: {{shown ? skill.level : 0}}%;"></view>
-        </view>
+  <view class="radar-card anim {{shown ? 'show' : ''}}">
+    <view class="card-title">技术能力雷达图</view>
+    <canvas canvas-id="skillsRadar" class="radar-canvas" disable-scroll="true"></canvas>
+    <view class="radar-legend"><view class="legend-dot"></view><text>我的能力</text></view>
+  </view>
+
+  <view class="skill-section-title">技能列表</view>
+  <view class="skill-group" wx:for="{{profile.skills}}" wx:key="group" wx:for-item="group">
+    <view class="skill-group-title">{{group.group}}</view>
+    <view class="skill-row" wx:for="{{group.items}}" wx:key="name" wx:for-item="skill">
+      <view class="skill-row-top">
+        <text class="skill-name">{{skill.name}}</text>
+        <text class="skill-level">{{skill.level}}%</text>
       </view>
+      <view class="skill-track"><view class="skill-fill" style="width:{{skill.level}}%;"></view></view>
     </view>
   </view>
 </view>

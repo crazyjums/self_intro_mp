@@ -1,18 +1,21 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/experience/experience",
-    "pages/projects/projects",
     "pages/skills/skills",
-    "pages/contact/contact",
+    "pages/projects/projects",
+    "pages/ai-assistant/ai-assistant",
+    "pages/profile/profile",
+    "pages/experience/experience",
+    "pages/articles/articles",
     "pages/project-detail/project-detail",
-    "pages/poster/poster"
+    "pages/poster/poster",
+    "pages/contact/contact"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "朱洪根",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#F5F5F7",
+    "backgroundColor": "#F7F8FA",
     "backgroundTextStyle": "light"
   },
   "tabBar": {
@@ -28,28 +31,28 @@
         "selectedIconPath": "images/tab-home-active.png"
       },
       {
-        "pagePath": "pages/experience/experience",
-        "text": "经历",
-        "iconPath": "images/tab-briefcase.png",
-        "selectedIconPath": "images/tab-briefcase-active.png"
-      },
-      {
-        "pagePath": "pages/projects/projects",
-        "text": "项目",
-        "iconPath": "images/tab-folder.png",
-        "selectedIconPath": "images/tab-folder-active.png"
-      },
-      {
         "pagePath": "pages/skills/skills",
         "text": "技能",
         "iconPath": "images/tab-pulse.png",
         "selectedIconPath": "images/tab-pulse-active.png"
       },
       {
-        "pagePath": "pages/contact/contact",
-        "text": "联系",
-        "iconPath": "images/tab-mail.png",
-        "selectedIconPath": "images/tab-mail-active.png"
+        "pagePath": "pages/projects/projects",
+        "text": "项目",
+        "iconPath": "images/tab-briefcase.png",
+        "selectedIconPath": "images/tab-briefcase-active.png"
+      },
+      {
+        "pagePath": "pages/ai-assistant/ai-assistant",
+        "text": "AI助手",
+        "iconPath": "images/tab-ai.png",
+        "selectedIconPath": "images/tab-ai-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tab-user.png",
+        "selectedIconPath": "images/tab-user-active.png"
       }
     ]
   },

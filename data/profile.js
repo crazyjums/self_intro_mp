@@ -2,10 +2,18 @@ const profile = {
   name: '朱洪根',
   enName: 'Zhuhonggen',
   avatar: '/images/avatar.png',
-  title: 'Backend Engineer / SRE Engineer',
+  title: 'Senior Backend Engineer',
+  shortTitle: '后端开发工程师 / SRE',
   oneLiner: '专注后端开发、DevOps 平台建设与工程效率提升',
   slogan: '英雄不问出处，富贵当思原由',
   tags: ['Go', 'Python', 'Java', 'Kubernetes', 'Docker', 'CI/CD', 'Cloud Native', 'AI'],
+
+  metrics: [
+    { value: '15+', label: '工作年限' },
+    { value: '30+', label: '项目经验' },
+    { value: '10W+', label: '服务用户' },
+    { value: '100%', label: '交付成功率' }
+  ],
 
   career: {
     period: '2021 - 至今',
@@ -101,6 +109,11 @@ const profile = {
     {
       id: 1,
       name: '企业级 CI/CD 发布平台',
+      category: '平台建设',
+      status: '重点',
+      period: '2021 - 至今',
+      owner: '核心负责人',
+      team: '团队 5 人',
       tech: ['Python', 'Go', 'Jenkins', 'Kubernetes'],
       intro: '负责设计和建设内部持续交付平台，支持自动构建、灰度发布、回滚、质量门禁。',
       background: '公司内部各业务线发布流程分散，人工操作多、效率低、易出错，需要一个统一的持续交付平台。',
@@ -125,6 +138,11 @@ const profile = {
     {
       id: 2,
       name: 'Kubernetes 自动发布系统',
+      category: '云原生',
+      status: '重点',
+      period: '2020 - 2021',
+      owner: '核心开发',
+      team: '团队 8 人',
       tech: ['Go', 'K8s', 'Redis'],
       intro: '支持大规模应用发布、健康检查、自动化回滚。',
       background: '业务容器化后，应用发布依赖人工执行 kubectl，缺少可视化的发布控制与健康保障机制。',
@@ -146,6 +164,11 @@ const profile = {
     {
       id: 3,
       name: '微信小程序自动灰度发布系统',
+      category: '平台建设',
+      status: '在用',
+      period: '2022',
+      owner: '独立开发',
+      team: '团队 2 人',
       tech: ['Scheduler', 'Redis', '任务调度'],
       intro: '实现小程序版本自动灰度、暂停恢复、发布状态管理。',
       background: '小程序发版需要人工跟踪灰度进度，缺少自动化的策略执行与状态可视化。',
@@ -166,12 +189,22 @@ const profile = {
     }
   ],
 
+  growth: [
+    { year: '2010', title: '开始程序员生涯', detail: 'Java 开发，参与多个业务系统研发' },
+    { year: '2014', title: '夯实化架构实践', detail: '从单体到 SOA，面向服务架构快速成长' },
+    { year: '2016', title: '微服务与治理', detail: '服务分层、链路追踪、容错降级实践' },
+    { year: '2018', title: 'DevOps 体系建设', detail: 'CI/CD、自动化发布、质量门禁体系' },
+    { year: '2021', title: '平台化建设', detail: '构建内部发布平台，提升工程效率' },
+    { year: '2023', title: '云原生实践', detail: 'Kubernetes、大规模容器化落地' },
+    { year: '2025', title: 'AI 工程实践', detail: 'AI 助手、智能运维、自动化开发工具' }
+  ],
+
   articles: [
-    { title: 'Git Fork 仓库与源仓库对齐的完整教程', category: 'DevOps', date: '2025.01' },
-    { title: 'Go channel timeout quit 模式解析', category: 'Go', date: '2024.05' },
-    { title: 'WebSocket 原理与持久连接实现', category: 'Cloud Native', date: '2023.11' },
-    { title: '私有 Git 仓库 GOINSECURE 配置全解', category: 'Go', date: '2023.10' },
-    { title: '学习 Consul 这一篇就够了', category: 'DevOps', date: '2023.09' }
+    { title: 'Kubernetes滚动发布最佳实践', category: 'Kubernetes', date: '2024-12-20', views: '3.2k', icon: 'K8s' },
+    { title: '从0到1搭建企业级CI/CD平台', category: 'DevOps', date: '2024-11-15', views: '5.6k', icon: '∞' },
+    { title: 'Go并发编程实战', category: 'Go', date: '2024-10-10', views: '2.8k', icon: 'Go' },
+    { title: '大规模Pod健康检查系统设计', category: '云原生', date: '2025-01-05', views: '1.9k', icon: 'Pod' },
+    { title: 'AI在运维中的应用探索', category: 'AI', date: '2025-02-20', views: '2.3k', icon: 'AI' }
   ],
 
   socials: [

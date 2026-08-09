@@ -3,11 +3,13 @@ const app = getApp()
 Page({
   data: {
     profile: {},
+    projects: [],
     shown: false
   },
 
   onLoad() {
-    this.setData({ profile: app.globalData.profile })
+    const profile = app.globalData.profile
+    this.setData({ profile, projects: profile.projects.slice(0, 3) })
   },
 
   onReady() {
@@ -19,6 +21,22 @@ Page({
     wx.switchTab({ url: '/pages/skills/skills' })
   },
 
+  openProject(e) {
+    wx.navigateTo({ url: `/pages/project-detail/project-detail?id=${e.currentTarget.dataset.id}` })
+  },
+
+  goProjects() {
+    wx.switchTab({ url: '/pages/projects/projects' })
+  },
+
+  goSkills() {
+    wx.switchTab({ url: '/pages/skills/skills' })
+  },
+
+  goArticles() {
+    wx.navigateTo({ url: '/pages/articles/articles' })
+  },
+
   openSocial(e) {
     const url = e.currentTarget.dataset.url
     wx.setClipboardData({
@@ -28,7 +46,7 @@ Page({
   },
 
   goExperience() {
-    wx.switchTab({ url: '/pages/experience/experience' })
+    wx.navigateTo({ url: '/pages/experience/experience' })
   },
 
   copyBlog() {

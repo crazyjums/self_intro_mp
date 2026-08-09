@@ -1,9 +1,17 @@
-<view class="poster-wrap">
+<view class="poster-page">
+  <view class="page-header poster-header">
+    <text class="header-action" bindtap="goBack">‹</text>
+    <text class="page-header-title">分享我的名片</text>
+    <text class="header-action">↗</text>
+  </view>
   <view class="poster-frame">
     <canvas canvas-id="poster" style="width: 375px; height: 600px;"></canvas>
-    <image class="qr-overlay" src="/images/wechat.jpg" mode="aspectFill"
-      show-menu-by-longpress bindlongpress="onQrLongPress" />
+    <image class="qr-overlay" src="/images/wechat.jpg" mode="aspectFill" show-menu-by-longpress bindlongpress="onQrLongPress" />
   </view>
-  <view class="poster-tip">长按二维码识别 · 添加我的微信</view>
-  <view class="btn btn-primary poster-btn" bindtap="save">保存海报到相册</view>
+  <view class="poster-tip">扫码了解更多</view>
+  <view class="poster-actions">
+    <view class="btn btn-primary" bindtap="save">保存图片</view>
+    <button class="btn btn-ghost share-btn" open-type="share">分享给朋友</button>
+  </view>
+  <tabbar active="profile" />
 </view>

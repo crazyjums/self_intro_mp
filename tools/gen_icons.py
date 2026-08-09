@@ -88,7 +88,23 @@ def draw_mail(color):
     fill_triangle(p, (10, 24), (40, 44), (70, 24), color)
     return p
 
-for name, fn in [('home', draw_home), ('briefcase', draw_briefcase), ('folder', draw_folder), ('pulse', draw_pulse), ('mail', draw_mail)]:
+def draw_ai(color):
+    p = blank()
+    fill_rect(p, 14, 22, 68, 62, color)
+    fill_rect(p, 30, 12, 52, 22, color)
+    fill_circle(p, 29, 42, 5, (0, 0, 0, 0))
+    fill_circle(p, 53, 42, 5, (0, 0, 0, 0))
+    fill_rect(p, 8, 38, 14, 48, color)
+    fill_rect(p, 60, 38, 74, 48, color)
+    return p
+
+def draw_user(color):
+    p = blank()
+    fill_circle(p, 40, 26, 15, color)
+    fill_circle(p, 40, 62, 24, color)
+    return p
+
+for name, fn in [('home', draw_home), ('briefcase', draw_briefcase), ('folder', draw_folder), ('pulse', draw_pulse), ('mail', draw_mail), ('ai', draw_ai), ('user', draw_user)]:
     make_png('images/tab-%s.png' % name, fn(INACTIVE))
     make_png('images/tab-%s-active.png' % name, fn(ACTIVE))
     print('generated tab-%s' % name)
